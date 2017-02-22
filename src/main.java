@@ -29,43 +29,30 @@ public class main {
                 "Never odd or even.",
                 "Was it a car or a cat I saw?",
                 "‘Redivider’",
-                "‘Aibohphobia’"};
+                "‘Aibohphobia’"
+        };
         String[] notPalindromes = {
                 "Not one",
                 "Nor me"
         };
 
+        PotentialPalindromeDeque dequeTest = new PotentialPalindromeDeque("Hello world");
+        System.out.println(dequeTest.toString());
 
-        testPalindromes(largeListOfTestPalindromes);
-        testPalindromes(notPalindromes);
+
+//        testPalindromes(largeListOfTestPalindromes);
+//        testPalindromes(notPalindromes);
 
 //        boolean notQuit = false;
 //        while (notQuit) {
 //            System.out.println("Please provide a potential palindrome posthaste!");
 //            String origString = "";
-//            String sanitizedString = "";
 //            origString = stdin.nextLine();
-//            sanitizedString = origString.toLowerCase();
-//            if (sanitizedString.equals("quit")) {
+//            if (origString.equalsIgnoreCase("quit")) {
 //                notQuit = false;
 //                System.exit(2);
 //            }
-//
-//            if (isPalindrome(sanitizedString)){
-//                System.out.println("We have a winner");
-//            }
 //        }
-//        BasePalindrome testBase = new BasePalindrome("Madam I'm Adam");
-//        System.out.println(testBase.toString());
-//        System.out.println(testBase.getOrigPotentialPalindrome());
-//        System.out.println(testBase.isPalindromeBasic());
-//
-//        PotentialPalindromeArrayList testArray = new PotentialPalindromeArrayList("Madam I'm Adam");
-//        System.out.println(testArray.toString());
-//        System.out.println(testArray.getOrigPotentialPalindrome());
-//        System.out.println(testArray.isPalindromeArrayList());
-
-
     }
 
     public static void testPalindromes(String[] palindromeList) {

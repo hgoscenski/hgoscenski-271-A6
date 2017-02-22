@@ -5,6 +5,9 @@ import java.util.ListIterator;
 /**
  * Created by hgoscenski on 2/22/17.
  */
+@SuppressWarnings("Duplicates")
+
+
 public class PotentialPalindromeArrayList extends BasePalindrome {
     ArrayList arrayPalindrome;
 
