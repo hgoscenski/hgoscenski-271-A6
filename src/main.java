@@ -7,6 +7,8 @@ public class main {
 
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
+        String origString = "";
+        int switchInt;
 
         String[] largeListOfTestPalindromes = {
                 "A man, a plan, a canal -- Panama",
@@ -36,23 +38,75 @@ public class main {
                 "Nor me"
         };
 
-        PotentialPalindromeDeque dequeTest = new PotentialPalindromeDeque("Hello world");
-        System.out.println(dequeTest.toString());
-
-
 //        testPalindromes(largeListOfTestPalindromes);
 //        testPalindromes(notPalindromes);
 
-//        boolean notQuit = false;
-//        while (notQuit) {
-//            System.out.println("Please provide a potential palindrome posthaste!");
-//            String origString = "";
-//            origString = stdin.nextLine();
-//            if (origString.equalsIgnoreCase("quit")) {
-//                notQuit = false;
-//                System.exit(2);
+        boolean notQuit = true;
+        while (notQuit) {
+            System.out.println("Please select the Collection used to store and test the palindrome.\nSimply type the number of the item:\n1. String \n2. ArrayList \n3.LinkedList\n4.Deque");
+            switchInt = stdin.nextInt();
+            stdin.nextLine();
+            System.out.println("Please provide a potential palindrome posthaste!");
+            origString = stdin.nextLine();
+            testingOfThePalindrome(switchInt, origString);
+//            switch (switchInt){
+//                case 1:
+//                    testingOfThePalindrome(1, origString);
+//                    break;
+//                case 2:
+//                    testingOfThePalindrome(2, origString);
+//                    break;
+//                case 3:
+//                    testingOfThePalindrome(3, origString);
+//                    break;
+//                case 4:
+//                    testingOfThePalindrome(4, origString);
+//                    break;
 //            }
-//        }
+            if (origString.equalsIgnoreCase("quit")) {
+                notQuit = false;
+                System.exit(2);
+            }
+
+        }
+    }
+
+    public static void testingOfThePalindrome(int type, String potential){
+        switch (type){
+            case 1:
+                BasePalindrome b = new BasePalindrome(potential);
+                if(b.isPalindromeBasic()){
+                    System.out.println(b.getOrigPotentialPalindrome() + " is a palindrome.");
+                } else {
+                    System.out.println(b.getOrigPotentialPalindrome() + " is not a palindrome.");
+                }
+                break;
+            case 2:
+                PotentialPalindromeArrayList a = new PotentialPalindromeArrayList(potential);
+                if(a.isPalindromeArrayList()){
+                    System.out.println(a.getOrigPotentialPalindrome() + " is a palindrome.");
+                } else {
+                    System.out.println(a.getOrigPotentialPalindrome() + " is not a palindrome.");
+                }
+                break;
+            case 3:
+                PotentialPalindromeLinkedList c = new PotentialPalindromeLinkedList(potential);
+                if(c.isPalindromeLinkedList()){
+                    System.out.println(c.getOrigPotentialPalindrome() + " is a palindrome.");
+                } else {
+                    System.out.println(c.getOrigPotentialPalindrome() + " is not a palindrome.");
+                }
+                break;
+            case 4:
+                PotentialPalindromeDeque d = new PotentialPalindromeDeque(potential);
+                if(d.isPalindromeDeque()){
+                    System.out.println(d.getOrigPotentialPalindrome() + " is a palindrome.");
+                } else {
+                    System.out.println(d.getOrigPotentialPalindrome() + " is not a palindrome.");
+                }
+                break;
+        }
+        System.out.println("\n\n");
     }
 
     public static void testPalindromes(String[] palindromeList) {
@@ -72,6 +126,15 @@ public class main {
             System.out.println(testArray.toString());
             System.out.println(testArray.getOrigPotentialPalindrome());
             System.out.println(testArray.isPalindromeLinkedList() + "\n");
+        }
+
+        System.out.println("\nThis is using the deque \n");
+
+        for (String palin : palindromeList) {
+            PotentialPalindromeDeque testArray = new PotentialPalindromeDeque(palin);
+            System.out.println(testArray.toString());
+            System.out.println(testArray.getOrigPotentialPalindrome());
+            System.out.println(testArray.isPalindromeDeque() + "\n");
         }
 
     }

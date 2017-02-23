@@ -34,6 +34,7 @@ public class PotentialPalindromeLinkedList extends BasePalindrome {
         }
 
         return false;
+
     }
 
     @Override

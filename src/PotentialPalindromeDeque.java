@@ -1,6 +1,4 @@
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
 import java.util.Iterator;
 
 /**
@@ -20,6 +18,24 @@ public class PotentialPalindromeDeque extends BasePalindrome {
         for(int i = 0; i<testPalindrome.length();i++){
             dequePalindrome.add(testPalindrome.charAt(i));
         }
+    }
+
+    public boolean isPalindromeDeque(){
+        int counter = 0;
+        int target = dequePalindrome.size() / 2;
+        while(!dequePalindrome.isEmpty()){
+//            System.out.println(dequePalindrome.getFirst() + " | " + dequePalindrome.getLast());
+            if(dequePalindrome.getLast() == dequePalindrome.getFirst()) {
+                counter ++;
+                dequePalindrome.removeFirst();
+                dequePalindrome.removeLast();
+                if(counter==target){
+                    return true;
+                }
+            } else return false;
+
+        }
+        return false;
     }
 
     @Override
