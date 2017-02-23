@@ -9,6 +9,7 @@ public class BasePalindrome {
         origPotentialPalindrome = testString;
         testPalindrome = sanitizePotentialPalindrome(testString);
     }
+
     public BasePalindrome(){}
 
     public String sanitizePotentialPalindrome(String testPalin){

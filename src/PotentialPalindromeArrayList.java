@@ -32,9 +32,8 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
                 if(counter==halfPalin){
                     return true;
                 }
-            } else {return false;}
+            } else return false;
         }
-
         return false;
     }
 

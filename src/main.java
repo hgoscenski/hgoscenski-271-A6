@@ -7,9 +7,8 @@ public class main {
 
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
-        String origString = "";
+        String origString;
         int switchInt;
-
         boolean notQuit = true;
         while (notQuit) {
             System.out.println("Please select the Collection used to store and test the palindrome.\n" +
@@ -67,7 +66,6 @@ public class main {
 //                case 4:
 //                    testingOfThePalindrome(4, origString);
 //                    break;
-
         }
     }
 

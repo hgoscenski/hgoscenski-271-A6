@@ -33,7 +33,6 @@ public class PotentialPalindromeDeque extends BasePalindrome {
                     return true;
                 }
             } else return false;
-
         }
         return false;
     }
@@ -47,6 +46,4 @@ public class PotentialPalindromeDeque extends BasePalindrome {
         }
         return sb.toString();
     }
-
-
 }
