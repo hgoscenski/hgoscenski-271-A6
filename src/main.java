@@ -10,45 +10,50 @@ public class main {
         String origString = "";
         int switchInt;
 
-        String[] largeListOfTestPalindromes = {
-                "A man, a plan, a canal -- Panama",
-                "Never a foot too far, even.",
-                "I, man, am regal; a German am I.",
-                "Sex at noon taxes.",
-                "Too hot to hoot.",
-                "Live not on evil deed, live not on evil.",
-                "Sir, I'm Iris!",
-                "Name now one man.",
-                "Mad? Am I, madam?",
-                "Madam, in Eden I'm Adam!",
-                "Madam, I'm Adam!",
-                "Able was I ere I saw Elba.",
-                "Step on no pets!",
-                "Niagara, O roar again!",
-                "Was it a rat I saw?",
-                "Adam, I'm Ada!",
-                "A Toyota.",
-                "Never odd or even.",
-                "Was it a car or a cat I saw?",
-                "‘Redivider’",
-                "‘Aibohphobia’"
-        };
-        String[] notPalindromes = {
-                "Not one",
-                "Nor me"
-        };
-
-//        testPalindromes(largeListOfTestPalindromes);
-//        testPalindromes(notPalindromes);
-
         boolean notQuit = true;
         while (notQuit) {
-            System.out.println("Please select the Collection used to store and test the palindrome.\nSimply type the number of the item:\n1. String \n2. ArrayList \n3.LinkedList\n4.Deque");
+            System.out.println("Please select the Collection used to store and test the palindrome.\n" +
+                    "Simply type the number of the item:\n1. String \n2. ArrayList \n3. LinkedList\n4. Deque\n5. Quit");
             switchInt = stdin.nextInt();
+
+            if(switchInt==5) {
+                notQuit = false;
+                System.exit(2);
+            }
             stdin.nextLine();
             System.out.println("Please provide a potential palindrome posthaste!");
             origString = stdin.nextLine();
             testingOfThePalindrome(switchInt, origString);
+            //        String[] largeListOfTestPalindromes = {
+//                "A man, a plan, a canal -- Panama",
+//                "Never a foot too far, even.",
+//                "I, man, am regal; a German am I.",
+//                "Sex at noon taxes.",
+//                "Too hot to hoot.",
+//                "Live not on evil deed, live not on evil.",
+//                "Sir, I'm Iris!",
+//                "Name now one man.",
+//                "Mad? Am I, madam?",
+//                "Madam, in Eden I'm Adam!",
+//                "Madam, I'm Adam!",
+//                "Able was I ere I saw Elba.",
+//                "Step on no pets!",
+//                "Niagara, O roar again!",
+//                "Was it a rat I saw?",
+//                "Adam, I'm Ada!",
+//                "A Toyota.",
+//                "Never odd or even.",
+//                "Was it a car or a cat I saw?",
+//                "‘Redivider’",
+//                "‘Aibohphobia’"
+//        };
+//        String[] notPalindromes = {
+//                "Not one",
+//                "Nor me"
+//        };
+
+//        testPalindromes(largeListOfTestPalindromes);
+//        testPalindromes(notPalindromes);
 //            switch (switchInt){
 //                case 1:
 //                    testingOfThePalindrome(1, origString);
@@ -62,11 +67,6 @@ public class main {
 //                case 4:
 //                    testingOfThePalindrome(4, origString);
 //                    break;
-//            }
-            if (origString.equalsIgnoreCase("quit")) {
-                notQuit = false;
-                System.exit(2);
-            }
 
         }
     }
@@ -108,34 +108,33 @@ public class main {
         }
         System.out.println("\n\n");
     }
+//
+//    public static void testPalindromes(String[] palindromeList) {
+//
+//        System.out.println("This is using the arraylist\n");
+//        for (String palin : palindromeList) {
+//            PotentialPalindromeArrayList testArray = new PotentialPalindromeArrayList(palin);
+//            System.out.println(testArray.toString());
+//            System.out.println(testArray.getOrigPotentialPalindrome());
+//            System.out.println(testArray.isPalindromeArrayList() + "\n");
+//        }
+//
+//        System.out.println("\nThis is using the linkedlist \n");
+//
+//        for (String palin : palindromeList) {
+//            PotentialPalindromeLinkedList testArray = new PotentialPalindromeLinkedList(palin);
+//            System.out.println(testArray.toString());
+//            System.out.println(testArray.getOrigPotentialPalindrome());
+//            System.out.println(testArray.isPalindromeLinkedList() + "\n");
+//        }
+//
+//        System.out.println("\nThis is using the deque \n");
+//
+//        for (String palin : palindromeList) {
+//            PotentialPalindromeDeque testArray = new PotentialPalindromeDeque(palin);
+//            System.out.println(testArray.toString());
+//            System.out.println(testArray.getOrigPotentialPalindrome());
+//            System.out.println(testArray.isPalindromeDeque() + "\n");
+//        }
 
-    public static void testPalindromes(String[] palindromeList) {
-
-        System.out.println("This is using the arraylist\n");
-        for (String palin : palindromeList) {
-            PotentialPalindromeArrayList testArray = new PotentialPalindromeArrayList(palin);
-            System.out.println(testArray.toString());
-            System.out.println(testArray.getOrigPotentialPalindrome());
-            System.out.println(testArray.isPalindromeArrayList() + "\n");
-        }
-
-        System.out.println("\nThis is using the linkedlist \n");
-
-        for (String palin : palindromeList) {
-            PotentialPalindromeLinkedList testArray = new PotentialPalindromeLinkedList(palin);
-            System.out.println(testArray.toString());
-            System.out.println(testArray.getOrigPotentialPalindrome());
-            System.out.println(testArray.isPalindromeLinkedList() + "\n");
-        }
-
-        System.out.println("\nThis is using the deque \n");
-
-        for (String palin : palindromeList) {
-            PotentialPalindromeDeque testArray = new PotentialPalindromeDeque(palin);
-            System.out.println(testArray.toString());
-            System.out.println(testArray.getOrigPotentialPalindrome());
-            System.out.println(testArray.isPalindromeDeque() + "\n");
-        }
-
-    }
 }
