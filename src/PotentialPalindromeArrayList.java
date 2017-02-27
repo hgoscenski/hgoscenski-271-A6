@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * Created by hgoscenski on 2/22/17.
@@ -15,6 +13,7 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
         super(tempString);
         origPotentialPalindrome = tempString;
         testPalindrome = sanitizePotentialPalindrome(tempString);
+//        testPalindrome = tempString;
         arrayPalindrome = new ArrayList();
         for(int i = 0; i<testPalindrome.length();i++){
             arrayPalindrome.add(testPalindrome.charAt(i));
@@ -37,6 +36,14 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
         return false;
     }
 
+//    public void isPalindromeIterator(){
+//        String[] badChars ={"!", ",", " ", "\'"};
+//        CustomIteratorOfPainAndSuffering ciopas = new CustomIteratorOfPainAndSuffering(badChars, arrayPalindrome);
+//        while(ciopas.hasNext()){
+//            System.out.println(ciopas.next());
+//        }
+//    }
+
     @Override
     public String toString() {
         Iterator it = arrayPalindrome.iterator();
@@ -46,4 +53,37 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
         }
         return sb.toString();
     }
+//
+//    public class CustomIteratorOfPainAndSuffering implements Iterator {
+//
+//        ListIterator fit;
+//        List listThing;
+//        List badCharsList;
+//
+//        public CustomIteratorOfPainAndSuffering(String[] badChars, ArrayList array) {
+//            badCharsList = Arrays.asList(badChars);
+//            System.out.println(badCharsList);
+//            System.out.println(array);
+//            this.listThing = array;
+//            fit = array.listIterator();
+//        }
+//
+//        @Override
+//        public boolean hasNext() {
+//            if(!badCharsList.contains(fit.next()))
+//            while(badCharsList.contains(fit.next())){
+//                continue;
+//            }
+//
+//        }
+//
+//        @Override
+//        public String next() {
+//            if (fit.hasNext()) {
+//                String thing = fit.next().toString();
+//                return thing;
+//            }
+//            return null;
+//        }
+//    }
 }

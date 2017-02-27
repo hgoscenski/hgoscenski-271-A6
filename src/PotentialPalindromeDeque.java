@@ -24,7 +24,6 @@ public class PotentialPalindromeDeque extends BasePalindrome {
         int counter = 0;
         int target = dequePalindrome.size() / 2;
         while(!dequePalindrome.isEmpty()){
-//            System.out.println(dequePalindrome.getFirst() + " | " + dequePalindrome.getLast());
             if(dequePalindrome.getLast() == dequePalindrome.getFirst()) {
                 counter ++;
                 dequePalindrome.removeFirst();
@@ -32,7 +31,8 @@ public class PotentialPalindromeDeque extends BasePalindrome {
                 if(counter==target){
                     return true;
                 }
-            } else return false;
+            }
+            else return false;
         }
         return false;
     }

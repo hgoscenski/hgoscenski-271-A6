@@ -9,13 +9,18 @@ public class main {
         Scanner stdin = new Scanner(System.in);
         String origString;
         int switchInt;
+
         boolean notQuit = true;
+
+//        PotentialPalindromeArrayList ppal = new PotentialPalindromeArrayList("Madam I'm Adam");
+//        ppal.isPalindromeIterator();
+//
         while (notQuit) {
             System.out.println("Please select the Collection used to store and test the palindrome.\n" +
                     "Simply type the number of the item:\n1. String \n2. ArrayList \n3. LinkedList\n4. Deque\n5. Quit");
             switchInt = stdin.nextInt();
 
-            if(switchInt==5) {
+            if (switchInt == 5) {
                 notQuit = false;
                 System.exit(2);
             }
@@ -23,6 +28,8 @@ public class main {
             System.out.println("Please provide a potential palindrome posthaste!");
             origString = stdin.nextLine();
             testingOfThePalindrome(switchInt, origString);
+
+
             //        String[] largeListOfTestPalindromes = {
 //                "A man, a plan, a canal -- Panama",
 //                "Never a foot too far, even.",
@@ -69,11 +76,11 @@ public class main {
         }
     }
 
-    public static void testingOfThePalindrome(int type, String potential){
-        switch (type){
+    public static void testingOfThePalindrome(int type, String potential) {
+        switch (type) {
             case 1:
                 BasePalindrome b = new BasePalindrome(potential);
-                if(b.isPalindromeBasic()){
+                if (b.isPalindromeBasic()) {
                     System.out.println(b.getOrigPotentialPalindrome() + " is a palindrome.");
                 } else {
                     System.out.println(b.getOrigPotentialPalindrome() + " is not a palindrome.");
@@ -81,7 +88,7 @@ public class main {
                 break;
             case 2:
                 PotentialPalindromeArrayList a = new PotentialPalindromeArrayList(potential);
-                if(a.isPalindromeArrayList()){
+                if (a.isPalindromeArrayList()) {
                     System.out.println(a.getOrigPotentialPalindrome() + " is a palindrome.");
                 } else {
                     System.out.println(a.getOrigPotentialPalindrome() + " is not a palindrome.");
@@ -89,7 +96,7 @@ public class main {
                 break;
             case 3:
                 PotentialPalindromeLinkedList c = new PotentialPalindromeLinkedList(potential);
-                if(c.isPalindromeLinkedList()){
+                if (c.isPalindromeLinkedList()) {
                     System.out.println(c.getOrigPotentialPalindrome() + " is a palindrome.");
                 } else {
                     System.out.println(c.getOrigPotentialPalindrome() + " is not a palindrome.");
@@ -97,7 +104,7 @@ public class main {
                 break;
             case 4:
                 PotentialPalindromeDeque d = new PotentialPalindromeDeque(potential);
-                if(d.isPalindromeDeque()){
+                if (d.isPalindromeDeque()) {
                     System.out.println(d.getOrigPotentialPalindrome() + " is a palindrome.");
                 } else {
                     System.out.println(d.getOrigPotentialPalindrome() + " is not a palindrome.");
@@ -112,8 +119,6 @@ public class main {
 //        System.out.println("This is using the arraylist\n");
 //        for (String palin : palindromeList) {
 //            PotentialPalindromeArrayList testArray = new PotentialPalindromeArrayList(palin);
-//            System.out.println(testArray.toString());
-//            System.out.println(testArray.getOrigPotentialPalindrome());
 //            System.out.println(testArray.isPalindromeArrayList() + "\n");
 //        }
 //
@@ -121,8 +126,6 @@ public class main {
 //
 //        for (String palin : palindromeList) {
 //            PotentialPalindromeLinkedList testArray = new PotentialPalindromeLinkedList(palin);
-//            System.out.println(testArray.toString());
-//            System.out.println(testArray.getOrigPotentialPalindrome());
 //            System.out.println(testArray.isPalindromeLinkedList() + "\n");
 //        }
 //
@@ -130,9 +133,8 @@ public class main {
 //
 //        for (String palin : palindromeList) {
 //            PotentialPalindromeDeque testArray = new PotentialPalindromeDeque(palin);
-//            System.out.println(testArray.toString());
-//            System.out.println(testArray.getOrigPotentialPalindrome());
 //            System.out.println(testArray.isPalindromeDeque() + "\n");
 //        }
-
+//
+//    }
 }

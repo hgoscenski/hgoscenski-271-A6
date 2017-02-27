@@ -1,3 +1,5 @@
+
+
 /**
  * Created by hgoscenski on 2/22/17.
  */
@@ -31,8 +33,4 @@ public class BasePalindrome {
         return(reversedString.equals(testPalindrome));
     }
 
-    @Override
-    public String toString() {
-        return testPalindrome;
-    }
 }
