@@ -9,6 +9,9 @@ import java.util.*;
 public class PotentialPalindromeArrayList extends BasePalindrome {
     ArrayList arrayPalindrome;
 
+    /**
+     * @param tempString this is again the potential palindrome
+     */
     public PotentialPalindromeArrayList(String tempString){
         super(tempString);
         origPotentialPalindrome = tempString;
@@ -20,6 +23,9 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
         }
     }
 
+    /**
+     * @return whether or not the potential palindrome is  in fact a palindrome
+     */
     public boolean isPalindromeArrayList(){
         ListIterator itF = arrayPalindrome.listIterator();
         ListIterator itR = arrayPalindrome.listIterator(arrayPalindrome.size());
@@ -53,6 +59,8 @@ public class PotentialPalindromeArrayList extends BasePalindrome {
         }
         return sb.toString();
     }
+//    I started to attempt to write a godforsaken custom iterator
+//    then decided that now was neither the time nor the place
 //
 //    public class CustomIteratorOfPainAndSuffering implements Iterator {
 //

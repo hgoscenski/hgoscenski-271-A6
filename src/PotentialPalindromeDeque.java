@@ -10,6 +10,9 @@ import java.util.Iterator;
 public class PotentialPalindromeDeque extends BasePalindrome {
     ArrayDeque dequePalindrome;
 
+    /**
+     * @param tempString this is the potential palindrome
+     */
     public PotentialPalindromeDeque(String tempString){
         super(tempString);
         origPotentialPalindrome = tempString;
@@ -20,6 +23,9 @@ public class PotentialPalindromeDeque extends BasePalindrome {
         }
     }
 
+    /**
+     * @return whether the potential palindrome is in fact a palindrome
+     */
     public boolean isPalindromeDeque(){
         int counter = 0;
         int target = dequePalindrome.size() / 2;

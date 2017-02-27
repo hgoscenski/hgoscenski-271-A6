@@ -7,6 +7,9 @@ public class BasePalindrome {
     String testPalindrome;
     String origPotentialPalindrome;
 
+    /**
+     * @param testString is the potential palindrome
+     */
     public BasePalindrome(String testString){
         origPotentialPalindrome = testString;
         testPalindrome = sanitizePotentialPalindrome(testString);
@@ -14,6 +17,10 @@ public class BasePalindrome {
 
     public BasePalindrome(){}
 
+    /**
+     * @param testPalin is a string that is then sanitized
+     * @return returns the string value
+     */
     public String sanitizePotentialPalindrome(String testPalin){
         String tempPalin = "";
         tempPalin = testPalin.toLowerCase();
@@ -21,10 +28,16 @@ public class BasePalindrome {
         return tempPalin;
     }
 
+    /**
+     * @return provides the original palindrome
+     */
     public String getOrigPotentialPalindrome() {
         return origPotentialPalindrome;
     }
 
+    /**
+     * @return returns the boolean value of palindromity
+     */
     public boolean isPalindromeBasic(){
         String reversedString ="";
         for (int i = testPalindrome.length()-1; i >= 0; i--) {

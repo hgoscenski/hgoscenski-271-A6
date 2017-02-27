@@ -9,21 +9,25 @@ public class main {
         Scanner stdin = new Scanner(System.in);
         String origString;
         int switchInt;
-
+//  sentinel loop guardian
         boolean notQuit = true;
 
+//  This was part of my testing the custom iterator
 //        PotentialPalindromeArrayList ppal = new PotentialPalindromeArrayList("Madam I'm Adam");
 //        ppal.isPalindromeIterator();
 //
         while (notQuit) {
+//            this is where humans input things
             System.out.println("Please select the Collection used to store and test the palindrome.\n" +
                     "Simply type the number of the item:\n1. String \n2. ArrayList \n3. LinkedList\n4. Deque\n5. Quit");
             switchInt = stdin.nextInt();
-
+//            switch condition that will quit the program
             if (switchInt == 5) {
                 notQuit = false;
                 System.exit(2);
             }
+//            this selects the data structure used to perform the palindromity testing
+//            then performs the testing
             stdin.nextLine();
             System.out.println("Please provide a potential palindrome posthaste!");
             origString = stdin.nextLine();

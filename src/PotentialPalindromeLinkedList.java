@@ -10,6 +10,9 @@ import java.util.ListIterator;
 public class PotentialPalindromeLinkedList extends BasePalindrome {
     LinkedList linkedPalindrome;
 
+    /**
+     * @param tempString takes in the string that may or may not be a palindrome
+     */
     public PotentialPalindromeLinkedList(String tempString){
         origPotentialPalindrome = tempString;
         testPalindrome = sanitizePotentialPalindrome(tempString);
@@ -19,6 +22,9 @@ public class PotentialPalindromeLinkedList extends BasePalindrome {
         }
     }
 
+    /**
+     * @return returns the boolean value of the the palindromity
+     */
     public boolean isPalindromeLinkedList(){
         ListIterator itF = linkedPalindrome.listIterator();
         ListIterator itR = linkedPalindrome.listIterator(linkedPalindrome.size());
